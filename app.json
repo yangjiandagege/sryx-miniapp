@@ -1,34 +1,15 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/mine/mine"
+    "pages/createRoom/createRoom",
+    "pages/joinGame/joinGame",
+    "pages/myRecord/myRecord"
   ],
   "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#2c89f8",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#f8f8f8",
     "backgroundColor": "#f8f8f8",
     "backgroundTextStyle": "light"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "主页",
-        "iconPath": "image/icon_index.png",
-        "selectedIconPath": "image/icon_index_selected.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "image/icon_mine.png",
-        "selectedIconPath": "image/icon_mine_selected.png"
-      }
-    ],
-    "color": "#909090",
-    "selectedColor": "#2c89f8",
-    "backgroundColor": "#f9f9f9",
-    "borderStyle": "white",
-    "position": "bottom"
   },
   "networkTimeout": {
     "request": 10000,

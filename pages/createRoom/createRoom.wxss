@@ -1,0 +1,25 @@
+.input-wrap{
+  margin: 32rpx 32rpx;
+  padding: 20rpx 0rpx;
+  border: solid #b0b0b0 5rpx;
+}
+.input-box{
+  height: 100rpx;
+  line-height: 100rpx;
+  margin:0 32rpx;
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: row;
+}
+.num-input{
+  height: 60rpx;
+  width: 200rpx;
+  margin: auto 0;
+  margin-left: 64rpx;
+  padding-left: 10rpx;
+  background: white;
+  border: solid #b0b0b0 3rpx;
+}
+.create-btn{
+  margin: 32rpx 32rpx;
+}
