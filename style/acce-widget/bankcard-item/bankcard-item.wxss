@@ -1,0 +1,32 @@
+.item {
+ width: 90%;
+ height: 150rpx;
+ margin: 20rpx auto;
+ padding: 20rpx;
+ background-color: goldenrod;
+ border-radius: 10rpx;
+ display: flex;
+ flex-direction: row;
+}
+
+.logo{
+  width: 68rpx;
+  height: 68rpx;
+  margin-right: 20rpx;
+}
+
+.bank-name{
+  font-size: 28rpx;
+  color: white;
+}
+
+.card-type{
+  font-size: 24rpx;
+  color: white;
+}
+
+.card-num{
+  margin-left: 80rpx;
+  font-size: 52rpx;
+  color: white;
+}

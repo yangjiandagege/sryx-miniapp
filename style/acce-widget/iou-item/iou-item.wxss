@@ -1,0 +1,138 @@
+.item {
+ width: 90%;
+ height: 280rpx;
+ margin: 20rpx auto;
+ padding-left: 20rpx;
+ padding-right: 20rpx;
+ background: white;
+ overflow: hidden;
+ border: solid 1rpx #e0e0e0;
+ border-radius: 10rpx;
+}
+ 
+.item .img {
+  width: 430rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+
+.item-status{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  margin-top: 18rpx;
+  margin-right: 18rpx;
+  font-size:25rpx;
+}
+
+.item-status-trg{
+  width:0;
+  height:0;
+  border-width:25rpx 15rpx 25rpx 0;
+  border-style:solid;
+  border-color:transparent dodgerblue transparent transparent;/*透明 灰 透明 透明 */
+}
+
+.item-status-content{
+ padding: 5rpx 20rpx;
+ text-align:right;
+ background: dodgerblue;
+ color: white;
+ box-shadow: 2rpx 2rpx 2rpx #888888;
+}
+
+.item .item-header {
+  height: 30%;
+  border-bottom: solid 3rpx #f0f0f0;
+  display: flex;
+  flex-direction: row;
+}
+
+.item .item-body {
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.item .item-footer {
+    height: 27%;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-body-center {
+    margin-top:10rpx;
+    margin-bottom:10rpx;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.item-footer-center {
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.title {
+ font-size: 30rpx;
+ display: block;
+ margin: 30rpx auto;
+}
+
+.item-date{
+  height:60rpx;
+  color:#999999;
+  font-size:13px;
+  line-height: 60rpx;
+}
+
+.item-date-selected{
+  height:60rpx;
+  color:#2c89f8;
+  font-size:13px;
+  line-height: 60rpx;
+}
+
+.step-box{
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-item{
+  width: 12rpx;
+  height: 12rpx;
+  margin:  0 auto;
+  border-radius: 100%;
+  background-color: #bbbbbb;
+  color: #333333;
+  text-align: center;
+}
+
+.step-item-selected{
+  width: 12rpx;
+  height: 12rpx;
+  margin:  0 auto;
+  border-radius: 100%;
+  background-color: #2c89f8;
+  color: #333333;
+  text-align: center;
+}
+
+.step-line{
+    margin:  0 auto;
+    width: 2rpx;
+    height: 48rpx;
+    background-color: #bbbbbb;
+}
+
+.step-line-selected{
+    margin:  0 auto;
+    width: 2rpx;
+    height: 48rpx;
+    background-color: #2c89f8;
+}

@@ -1,0 +1,10 @@
+<template name="bankcard-item">
+  <view class="item" style="background-color:{{cardColor}}">
+    <image class="logo" src="/image/banklogo.png"></image>
+    <view class="flx-column">
+      <view class="bank-name">{{bankName}}</view>
+      <view class="card-type">{{cardType}}</view>
+      <view class="card-num">{{cardNum}}</view>
+    </view>
+  </view>
+</template>

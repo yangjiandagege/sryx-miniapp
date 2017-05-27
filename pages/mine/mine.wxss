@@ -1,0 +1,64 @@
+.base-info-box {
+  display:flex;
+  height: 280rpx;
+  width: 100%;
+  background-color: #2c89f8;
+}
+.base-info-box .image-icon {
+  margin: auto 0;
+  margin-left: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100%;
+}
+.base-info {
+  display:flex; 
+  flex-direction:column;
+  margin: auto 0;
+  margin-left: 32rpx;
+}
+.base-info-box .mine-text{
+  color: #fff;
+}
+
+.item-box{
+  display:flex; 
+  flex-direction:row;
+  background-color: #fff;
+  height: 80rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border: solid 1rpx #e0e0e0;
+  border-radius: 8rpx;
+}
+.item-box .item-text{
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  font-size: 14pt;
+}
+.item-box .item-image{
+  position: relative;
+  margin: auto 0;
+  height: 50rpx;
+  width: 50rpx;
+}
+.item-box .with-arrow{
+  position: relative;
+  margin: auto 0;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.display_none{
+  display: none;
+}
+
+.mine-qrcode{
+  width: 56rpx;
+  height: 56rpx;
+}
+

@@ -1,0 +1,153 @@
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" indicator-active-color="#2c89f8" class="swiper_ad">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <navigator url="url">
+        <image class="image_ad" src="{{item}}" mode="widthFix" />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="control-bg">
+  <view class="control-item" bindtap="createTap">
+    <image class="control-child control-child-icon" src="/image/create_iou.png"></image>
+    <text class="control-child control-child-txt">发欠条</text>
+  </view>
+  <view class="control-item" bindtap="qrScanTap">
+    <image class="control-child control-child-icon" src="/image/qr_scan.png"></image>
+    <text class="control-child control-child-txt">扫一扫</text>
+  </view>
+  <view class="control-item" bindtap="myIousTap">
+    <image class="control-child control-child-icon" src="/image/my_ious.png"></image>
+    <text class="control-child control-child-txt">我的欠条</text>
+  </view>
+  <view class="control-item" bindtap="messageTap">
+    <view class="contains_indicator control-child control-child-icon">
+      <image class="control-child control-child-icon" src="/image/message_center.png"></image>
+      <view class="view_indicator" hidden="{{!hasMessage}}" />
+    </view>
+    <text class="control-child control-child-txt">消息中心</text>
+  </view>
+</view>
+
+<view class="module-wrap" style="margin-top:10rpx;">
+  <navigator class="module-box"  url="/pages/iou/unconfirmedIouList/unconfirmedIouList">
+    <image class="module-img" src="../../image/iou_unconfirmed.png"></image>
+    <view class="module-content">
+      <text class="module-title">未确认欠条</text>
+      <text class="module-tips">尚未被确认的欠条</text>
+    </view>
+  </navigator>
+  <navigator class="module-box" url="/pages/account/bankCard/bankCard">
+    <image class="module-img" src="../../image/bandcard.png"></image>
+    <view class="module-content">
+      <text class="module-title">银行卡管理</text>
+      <text class="module-tips">银行卡添加、信息查询</text>
+    </view>
+  </navigator>
+</view>
+
+<view class="module-wrap">
+  <navigator class="module-box" url="/pages/iou/myAllIouList/myAllIouList?role=r03">
+    <image class="module-img" src="../../image/iou_pending.png"></image>
+    <view class="module-content">
+      <text class="module-title">我要还款</text>
+      <text class="module-tips">我的待还款欠条</text>
+    </view>
+  </navigator>
+
+  <navigator class="module-box" url="/pages/iou/myAllIouList/myAllIouList?role=r02">
+    <image class="module-img" src="../../image/should_receive.png"></image>
+    <view class="module-content">
+      <text class="module-title">应收欠款</text>
+      <text class="module-tips">我的待收款欠条</text>
+    </view>
+  </navigator>
+</view>
+
+<view class="module-wrap">
+  <view class="module-box">
+    <image class="module-img" src="../../image/iou_pledge.png"></image>
+    <view class="module-content">
+      <text class="module-title">欠条质押</text>
+      <text class="module-tips">通过质押欠条完成交易</text>
+    </view>
+  </view>
+
+  <view class="module-box">
+    <image class="module-img" src="../../image/iou_discount.png"></image>
+    <view class="module-content">
+      <text class="module-title">欠条贴现</text>
+      <text class="module-tips">把您的欠条换成现金</text>
+    </view>
+  </view>
+</view>
+
+<view class="module-wrap">
+  <navigator class="module-box" url="/pages/account/marginAccount/marginAccount" >
+    <image class="module-img" src="../../image/margin_account.png"></image>
+    <view class="module-content">
+      <text class="module-title">保证金账户</text>
+      <text class="module-tips">保证金查询/充值/提现</text>
+    </view>
+  </navigator>
+  <navigator class="module-box" url="/pages/account/collectionAccount/collectionAccount">
+    <image class="module-img" src="../../image/should_receive.png"></image>
+    <view class="module-content">
+      <text class="module-title">收款账户</text>
+      <text class="module-tips">应收欠款的查询/提现</text>
+    </view>
+  </navigator>
+</view>
+
+<!--<view class="module-wrap">
+  <view class="module-box">
+    <image class="module-img" src="../../image/discount_of_bill.png"></image>
+        <view class="module-content">
+      <text class="module-title">欠条贴现</text>
+      <text class="module-tips">未确认欠条</text>
+    </view>
+  </view>
+
+  <view class="module-box">
+    <image class="module-img" src="../../image/discount_of_bill.png"></image>
+  </view>
+</view>-->
+
+<!--
+<view class="control-bg" style="background-color:#fff; padding-top: 40rpx;padding-bottom: 40rpx;">
+  <view class="control-item" bindtap="unconfirmedIouListTap">
+    <image class="control-child control-child-icon" src="../../image/transaction_record.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">待确认</text>
+  </view>
+  <view class="control-item" bindtap="repaymentIouListTap">
+    <image class="control-child control-child-icon" src="../../image/pledge.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">待还款</text>
+  </view>
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/discount_of_bill.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">应收款</text>
+  </view>
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/pledge.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">收款账户</text>
+  </view>
+</view>
+<view class="control-bg" style="background-color:#fff; padding-top: 0rpx;padding-bottom: 40rpx;">
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/pledge.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">交易流水</text>
+  </view>
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/repayment.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">欠条还款</text>
+  </view>
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/transaction_record.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">欠条贴现</text>
+  </view>
+  <view class="control-item">
+    <image class="control-child control-child-icon" src="../../image/discount_of_bill.png"></image>
+    <text class="control-child control-child-txt" style="color:#333333">欠条质押</text>
+  </view>
+</view>-->

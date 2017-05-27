@@ -1,0 +1,65 @@
+/**app.wxss**/
+@import "style/weui.wxss";
+
+page{
+  background-color: #f1f1f1;
+}
+.page-section{
+  width: 100%;
+  margin-bottom: 60rpx;
+}
+
+.page-section_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display_hidden{
+  visibility:hidden;
+}
+
+.flx-column{
+  display:flex;
+  flex-direction:column;
+}
+
+.flx-row{
+  display:flex;
+  flex-direction:row;
+}
+
+.flx-column-center{
+  align-items: center;
+}
+
+.test-border{
+  border: solid 1rpx;
+}
+
+.item-box {
+    display:flex;
+    height: 100rpx;
+    padding-right: 32rpx;
+    padding-left: 32rpx;
+    background-color: white;
+}
+
+.item-box .item-input {
+    width: 70%;
+    margin: auto 0;
+}
+
+.item-box .item-title {
+    margin: auto 0;
+}
+
+.item-box .item-content {
+    margin: auto 0;
+}
+
+.item-box .item-arrow{
+    margin: auto 0;
+    width: 32rpx;
+    height: 32rpx;
+}

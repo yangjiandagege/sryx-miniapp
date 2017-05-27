@@ -1,0 +1,43 @@
+<template name="iou-item">
+  <view class="item">
+    <view class="item-header">
+        <view style="width:80%;margin:auto 0;">
+            <view style="display: flex;flex-direction: row;">
+                <view style="flex:1;color:#999999;font-size:13px">受益人：<text style="color:#222222;font-size:14px">{{receiptorName}}</text></view>
+                <view style="flex:1;color:#999999;font-size:13px">欠款人：<text style="color:#222222;font-size:14px">{{debtorName==null?'暂无':debtorName}}</text></view>
+            </view>
+        </view>
+        <view class="item-status" wx:if="{{debtState=='0'}}">
+          <view class="item-status-trg" style="border-color:transparent #FFCC00 transparent transparent;"></view>
+          <view class="item-status-content" style="background: #FFCC00;">待确认</view>
+        </view>
+        <view class="item-status" wx:elif="{{debtState=='2'}}">
+          <view class="item-status-trg" style="border-color:transparent #808080 transparent transparent;"></view>
+          <view class="item-status-content" style="background: #808080;">已作废</view>
+        </view>
+        <view class="item-status" wx:elif="{{debtState=='10'}}">
+          <view class="item-status-trg" style="border-color:transparent #00A2FF transparent transparent;"></view>
+          <view class="item-status-content" style="background: #00A2FF;">还款期内</view>
+        </view>
+    </view>
+    <view class="item-body">
+        <view style="width:52%;">
+            <view style="color:#FF6600;font-size:48rpx;margin-top:30rpx;">{{debtAmount}}<text style="font-size:26rpx"> 元</text>
+            </view>
+            <view style="color:#999999;font-size:13px;margin-top:30rpx;">履约保证金：{{assureAmount}}元</view>
+        </view>
+        <view class="step-box" style="width:2%;">
+            <view class="step-item{{debtState=='0'||debtState=='2'||debtState=='10'?'-selected':''}}"></view>
+            <view class="step-line{{debtState=='20'?'-selected':''}}"></view>
+            <view class="step-item{{debtState=='20'?'-selected':''}}"></view>
+            <view class="step-line{{debtState=='30'?'-selected':''}}"></view>
+            <view class="step-item{{debtState=='30'?'-selected':''}}"></view>
+        </view>
+        <view class="item-body-center" style="width:48%;">
+            <view class="item-date{{debtState=='0'||debtState=='2'||debtState=='10'?'-selected':''}}">欠条创建：{{effectiveDate}}</view>
+            <view class="item-date{{debtState=='20'?'-selected':''}}">约定还款：{{agreePayDate}}</view>
+            <view class="item-date{{debtState=='30'?'-selected':''}}">担保终止：{{overdueAssureDate}}</view>
+        </view>
+    </view>
+  </view>
+</template>

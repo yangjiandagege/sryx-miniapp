@@ -1,0 +1,45 @@
+<view class="base-info-box" style="flex-direction:row">
+  <image class="image-icon" src="{{user.userInfo.avatarUrl}}" background-size="cover"></image>
+
+  <view class="flx-row" wx:if="{{isLogin}}">
+    <view class="base-info" style="width:420rpx;">
+      <view style="display:flex; flex-direction:row">
+        <text class="mine-text">{{user.userInfo.nickName}}</text>
+      </view>
+      <view style="display:flex; flex-direction:row">
+        <text class="mine-text" style="margin-bottom: 20rpx">{{user.phoneNum}}</text>
+      </view>
+    </view>
+    <navigator class="mine-qrcode" style="margin: auto 0;" url="myQrcode/myQrcode">
+      <image class="mine-qrcode" src="/image/mine_qrcode.png" ></image>
+    </navigator>
+  </view>
+  <view class="base-info" wx:else>
+      <text class="mine-text" bindtap="gotoRegisterTap">您尚未注册，请点击这里去注册！</text>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="myInfo/myInfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">个人资料</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="handlePwdSelect/handlePwdSelect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">密码管理</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
+
+<view class="weui-cells weui-cells_after-title" style="margin-top:20rpx;">
+    <navigator url="contract/contract" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">帮助手册</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="contract/contract" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">关于我们</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="customMessage/customMessage" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">联系客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
