@@ -1,1 +1,13 @@
+<view class="flx-column">
 
+  <view class="pay-tips">请输入邀请码加入游戏吧！</view>
+  <view class="pwd-input-box">
+    <input class="pwd-input-box-hidden"  cursor-spacing="100px" focus="true" maxlength="6" type="number" bindblur="inputBlur" bindfocus="inputFocus" bindinput="inviteCodeInput"/>
+    <view class="pwd-input-box">
+      <view class="pwd-input-item" style="border-left: solid 1rpx #b0b0b0;">{{char_1}}</view>
+      <view class="pwd-input-item">{{char_2}}</view>
+      <view class="pwd-input-item">{{char_3}}</view>
+      <view class="pwd-input-item" style="border-right: solid 1rpx #b0b0b0;">{{char_4}}</view>
+    </view>
+  </view>
+</view>

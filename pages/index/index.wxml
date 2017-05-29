@@ -3,8 +3,8 @@
   <image src="/image/logo.png" class="logo"></image>
   <text class="player-name">{{userInfo.nickName}}</text>
 
-  <navigator class="item" url="/pages/createRoom/createRoom">
-    创建房间
+  <navigator class="item" url="/pages/createGame/createGame">
+    创建游戏
   </navigator>
 
   <navigator class="item" url="/pages/joinGame/joinGame">

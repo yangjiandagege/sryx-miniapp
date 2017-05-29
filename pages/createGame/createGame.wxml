@@ -1,0 +1,17 @@
+<view class="input-wrap">
+  <view class="input-box">
+    杀手人数：
+    <input class="num-input" placeholder="*必填" type="number" maxlength="1" bindinput="killerNumInput"/>
+  </view>
+  <view class="input-box">
+    警察人数：
+    <input class="num-input" placeholder="*必填" type="number" maxlength="1" bindinput="policeNumInput"/>
+  </view>
+  <view class="input-box">
+    平民人数：
+    <input class="num-input" placeholder="*必填" type="number" maxlength="1" bindinput="citizenNumInput"/>
+  </view>
+</view>
+<view class="page__bd page__bd_spacing create-btn">
+  <button class="weui-btn" style="background-color:#606060" type="primary" loading="{{loading}}" bindtap="createGameTap">创建房间</button>
+</view>

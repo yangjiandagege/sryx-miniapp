@@ -1,1 +1,39 @@
-/* pages/joinGame/joinGame.wxss */
+page{
+  background-color: white;
+}
+.pay-tips{
+  margin:0 auto;
+  margin-top:60rpx;
+  margin-bottom: 40rpx;
+  margin-left: 120rpx;
+  color: gray;
+  font-size: 32rpx;
+}
+
+.pwd-input-box{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.pwd-input-item{
+  width: 125rpx;
+  height: 125rpx;
+  text-align: center;
+  line-height: 125rpx;
+  font-size: 50rpx;
+  border-top: solid 1rpx #b0b0b0;
+  border-bottom: solid 1rpx #b0b0b0;
+  border-right: solid 1rpx #f0f0f0;
+}
+
+.pwd-input-box-hidden{
+  height:100rpx;
+  width:750rpx;
+  font-size: 1rpx;
+  margin:0 auto;
+  position: absolute;
+  color:white;
+  left: -150rpx;
+}

@@ -1,0 +1,19 @@
+<view class="page" style="padding:32rpx;">
+    <view class="page__hd" style="margin-bottom:32rpx;">
+        <view class="page__desc">游戏邀请码：{{game.inviteCode}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-grids">
+            <block wx:for-items="{{roleGrids}}" wx:key="{{index}}">
+                <view class="weui-grid" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="/image/header_pic.png" />
+                    <view class="weui-grid__label">未连接</view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class="page__bd page__bd_spacing" style="margin-top:32rpx;">
+      <button class="weui-btn" style="background-color:#606060" type="primary" loading="{{loading}}" bindtap="createGameTap">开始游戏</button>
+    </view>
+</view>

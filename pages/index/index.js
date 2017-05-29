@@ -17,7 +17,45 @@ Page({
           },
           success: function (res) {
             getApp().user.openid = res.data.openid;
-            console.log('step2.0 success 获取微信openid ：', getApp().user.openid);
+            console.log('step2 success 获取微信openid ：', getApp().user.openid);
+
+            wx.getUserInfo({
+              success: function (res) {
+                console.log('step3.1 success 获取微信用户信息 ', res.userInfo);
+                getApp().user.userInfo = res.userInfo;
+                self.data.userInfo = getApp().user.userInfo;
+                self.setData({
+                  userInfo: self.data.userInfo
+                })
+
+                wx.request({
+                  url: config.baseUrl + "updateplayer",
+                  data: {
+                    playerId: getApp().user.openid,
+                    avatarUrl: getApp().user.userInfo.avatarUrl,
+                    city: getApp().user.userInfo.city,
+                    country: getApp().user.userInfo.country,
+                    gender: getApp().user.userInfo.gender,
+                    language: getApp().user.userInfo.language,
+                    nickName: getApp().user.userInfo.nickName,
+                    province: getApp().user.userInfo.province,
+                  },
+                  success: function (result) {
+                    console.log('step4 success 更新云端用户信息 ', result.data);
+                    console.log(result.data);
+                  },
+
+                  fail: function ({errMsg}) {
+                    console.log('step4 fail 更新云端用户信息 ', errMsg);
+                  }
+                })
+              },
+
+              fail: function (res) {
+                console.log('step3.1 fail 获取微信用户信息', res);
+              }
+            })
+
 
             wx.request({
               url: `https://api.weixin.qq.com/cgi-bin/token`,
@@ -28,35 +66,21 @@ Page({
               },
 
               success: function (result) {
-                console.log('step3 success 获取用户access_token：' + result.data.access_token + '，初始化完成');
+                console.log('step3.2 success 获取用户access_token：' + result.data.access_token + '，初始化完成');
                 getApp().user.accessToken = result.data.access_token;
               },
 
               fail: function ({errMsg}) {
-                console.log('step3 fail 获取用户access_token', errMsg);
+                console.log('step3.2 fail 获取用户access_token', errMsg);
               }
             })
           },
 
           fail: function (res) {
-            console.log('step2.0 fail 获取微信openid，将无法正常使用开放接口等服务', res);
+            console.log('step2 fail 获取微信openid，将无法正常使用开放接口等服务', res);
           }
         })
 
-        wx.getUserInfo({
-          success: function (res) {
-            console.log('step2.1 success 获取微信用户信息 ', res.userInfo);
-            getApp().user.userInfo = res.userInfo;
-            self.data.userInfo = getApp().user.userInfo;
-            self.setData({
-              userInfo: self.data.userInfo
-            })
-          },
-
-          fail: function (res) {
-            console.log('step2.1 fail 获取微信用户信息', res);
-          }
-        })
       },
 
       fail: function (err) {

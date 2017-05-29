@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/createRoom/createRoom",
+    "pages/createGame/createGame",
     "pages/joinGame/joinGame",
-    "pages/myRecord/myRecord"
+    "pages/myRecord/myRecord",
+    "pages/waitGame/waitGame"
   ],
   "window": {
     "navigationBarTextStyle": "black",

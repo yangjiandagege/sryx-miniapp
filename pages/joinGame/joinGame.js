@@ -1,66 +1,82 @@
-// pages/joinGame/joinGame.js
+var config = require('../../config');
+var self;
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    inputContent: '',
+    char_1: '',
+    char_2: '',
+    char_3: '',
+    char_4: '',
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    self = this;
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  inviteCodeInput: function (e) {
+    self.setData({
+      inputContent: e.detail.value,
+      char_1: e.detail.value.charAt(0),
+      char_2: e.detail.value.charAt(1),
+      char_3: e.detail.value.charAt(2),
+      char_4: e.detail.value.charAt(3),
+    })
+
+
+
+    if (self.data.inputContent.length == 4) {
+
+      self.submit();
+
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+  submit: function(){
+    wx.showToast({
+      title: 'loading...',
+      icon: 'loading'
+    })
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+    wx.request({
+      url: config.baseUrl + "getgamebyid",
+      data: {
+        inviteCode: self.data.inputContent,
+      },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+      success: function (result) {
+        wx.request({
+          url: config.baseUrl + "updaterole",
+          data: {
+            gameId: result.data.result.gameId,
+            playerId: getApp().user.openid,
+            playerNickName: getApp().user.userInfo.nickName,
+            playerAvatarUrl: getApp().user.userInfo.avatarUrl,
+          },
+          success: function (result) {
+            wx.hideToast();
+          },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
+          fail: function ({errMsg}) {
+            wx.hideToast();
+            wx.showModal({
+              title: "错误",
+              content: errMsg,
+              confirmText: "确定",
+              showCancel: false,
+            })
+          }
+        })
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
+      },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+      fail: function ({errMsg}) {
+        wx.showModal({
+          title: "错误",
+          content: errMsg,
+          confirmText: "确定",
+          showCancel: false,
+        })
+      }
+    })
   }
 })
