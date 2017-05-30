@@ -1,0 +1,6 @@
+<block  wx:for-items="{{roleList}}">
+  <view class="role-box">
+    <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
+    <view class="name">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
+  </view>
+</block>

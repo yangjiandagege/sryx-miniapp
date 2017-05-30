@@ -22,16 +22,13 @@ Page({
       char_4: e.detail.value.charAt(3),
     })
 
-
-
     if (self.data.inputContent.length == 4) {
-
-      self.submit();
-
+      console.log("submitRole");
+      self.submitRole();
     }
   },
 
-  submit: function(){
+  submitRole: function(){
     wx.showToast({
       title: 'loading...',
       icon: 'loading'
@@ -52,8 +49,23 @@ Page({
             playerNickName: getApp().user.userInfo.nickName,
             playerAvatarUrl: getApp().user.userInfo.avatarUrl,
           },
-          success: function (result) {
+          success: function (res) {
             wx.hideToast();
+            if (res.data.returnCode=='200'){
+              wx.redirectTo({
+                url: '/pages/role/role?gameId=' + result.data.result.gameId,
+              })
+            }else{
+              wx.showModal({
+                title: "错误",
+                content: res.data.returnMsg,
+                confirmText: "确定",
+                showCancel: false,
+                success: function(){
+                  wx.navigateBack({})
+                }
+              })
+            }
           },
 
           fail: function ({errMsg}) {
@@ -66,7 +78,6 @@ Page({
             })
           }
         })
-
       },
 
       fail: function ({errMsg}) {

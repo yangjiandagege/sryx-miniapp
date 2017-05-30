@@ -1,0 +1,19 @@
+
+<view class="role" wx:if="{{role.roleType == 0}}">
+  <view> 您的身份是：</view>
+  <view class="role-type">
+    杀手
+  </view>
+</view>
+<view class="role" wx:elif="{{role.roleType == 1}}">
+  <view> 您的身份是：</view>
+  <view class="role-type">
+    警察
+  </view>
+</view>
+<view class="role" wx:elif="{{role.roleType == 2}}">
+  <view> 您的身份是：</view>
+  <view class="role-type">
+    平民
+  </view>
+</view>

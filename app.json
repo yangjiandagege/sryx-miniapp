@@ -4,7 +4,9 @@
     "pages/createGame/createGame",
     "pages/joinGame/joinGame",
     "pages/myRecord/myRecord",
-    "pages/waitGame/waitGame"
+    "pages/waitGame/waitGame",
+    "pages/role/role",
+    "pages/manageGame/manageGame"
   ],
   "window": {
     "navigationBarTextStyle": "black",

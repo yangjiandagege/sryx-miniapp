@@ -1,0 +1,21 @@
+
+.role-box{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: solid #f0f0f0 1rpx;
+}
+
+.thumbnail{
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto 0;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+
+.name{
+  margin: auto 0;
+
+}

@@ -7,3 +7,12 @@ page {
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
   font-family: '微软雅黑', Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
 }
+
+.flx-row{
+  display: flex;
+  flex-direction: row;
+}
+.flx-cln{
+  display: flex;
+  flex-direction: column;
+}

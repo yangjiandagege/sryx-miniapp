@@ -45,6 +45,8 @@ Page({
         url: config.baseUrl + "creategame",
         data: {
           gameOwnerId: getApp().user.openid,
+          gameOwnerAvatarUrl: getApp().user.userInfo.avatarUrl,
+          gameOwnerNickName: getApp().user.userInfo.nickName,
           state: 0,
           killerNum: self.data.killerNum,
           policeNum: self.data.policeNum,
@@ -55,7 +57,7 @@ Page({
           self.setData({
             loading: false
           })
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/waitGame/waitGame?gameId=' + result.data.result,
           })
         },

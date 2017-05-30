@@ -1,1 +1,40 @@
-/* pages//waitGame/waitGame.wxss */
+.inviteCode{
+  width: 50%;
+}
+
+.counter{
+  width: 50%;
+  margin: auto 0;
+  text-align: right;
+  color: red;
+  font-size: 25rpx;
+}
+
+.content-block{
+  width: 200px;
+  height: 150px;
+  background-color: darkcyan;
+  position: relative;
+}
+.ribbon-wrapper{
+  width: 80px;
+  height: 88px;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  overflow: hidden;
+}
+.ribbon{
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  padding: 3px 0;
+  width: 60px;
+  background-color: #2F821B;
+  /*background-image: -webkit-linear-gradient(top, #43BD28, #2F821B);这里可以根据需要把所有的厂商前缀都加上*/
+  /*box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), inset 1px 1px 0px rgba(255, 255, 255, .1);*/
+  font-size: 14px;
+  transform: rotate(45deg); 
+  position: relative;
+  float: right;
+}
