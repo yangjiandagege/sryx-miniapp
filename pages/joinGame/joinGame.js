@@ -35,49 +35,62 @@ Page({
     })
 
     wx.request({
-      url: config.baseUrl + "getgamebyid",
+      url: config.baseUrl + "getgamebyinvitecode",
       data: {
         inviteCode: self.data.inputContent,
       },
 
       success: function (result) {
-        wx.request({
-          url: config.baseUrl + "updaterole",
-          data: {
-            gameId: result.data.result.gameId,
-            playerId: getApp().user.openid,
-            playerNickName: getApp().user.userInfo.nickName,
-            playerAvatarUrl: getApp().user.userInfo.avatarUrl,
-          },
-          success: function (res) {
-            wx.hideToast();
-            if (res.data.returnCode=='200'){
-              wx.redirectTo({
-                url: '/pages/role/role?gameId=' + result.data.result.gameId,
-              })
-            }else{
+        if (result.data.returnCode == '200') {
+          wx.request({
+            url: config.baseUrl + "updaterole",
+            data: {
+              gameId: result.data.result.gameId,
+              playerId: getApp().user.openid,
+              playerNickName: getApp().user.userInfo.nickName,
+              playerAvatarUrl: getApp().user.userInfo.avatarUrl,
+            },
+            success: function (res) {
+              wx.hideToast();
+              if (res.data.returnCode=='200'){
+                wx.redirectTo({
+                  url: '/pages/role/role?gameId=' + result.data.result.gameId,
+                })
+              }else{
+                wx.showModal({
+                  title: "错误",
+                  content: res.data.returnMsg,
+                  confirmText: "确定",
+                  showCancel: false,
+                  success: function(){
+                    wx.navigateBack({})
+                  }
+                })
+              }
+            },
+
+            fail: function ({errMsg}) {
+              wx.hideToast();
               wx.showModal({
                 title: "错误",
-                content: res.data.returnMsg,
+                content: errMsg,
                 confirmText: "确定",
                 showCancel: false,
-                success: function(){
-                  wx.navigateBack({})
-                }
               })
             }
-          },
-
-          fail: function ({errMsg}) {
-            wx.hideToast();
-            wx.showModal({
-              title: "错误",
-              content: errMsg,
-              confirmText: "确定",
-              showCancel: false,
-            })
-          }
-        })
+          })
+        }else{
+          wx.hideToast();
+          wx.showModal({
+            title: "错误",
+            content: "该邀请码已经过期！",
+            confirmText: "确定",
+            showCancel: false,
+            success: function () {
+              wx.navigateBack({})
+            }
+          })
+        }
       },
 
       fail: function ({errMsg}) {

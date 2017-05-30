@@ -1,0 +1,5 @@
+<template name="foot">
+  <navigator class="page-foot" url="/pages/gameRule/gameRule" hover-class="none">
+    <view class="icon-foot">《游戏规则》</view>
+  </navigator>
+</template>

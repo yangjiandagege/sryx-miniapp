@@ -2,7 +2,7 @@
     <view class="page__hd" style="margin-bottom:32rpx;">
       <view class="flx-row">
         <view class="page__desc inviteCode">游戏邀请码：{{game.inviteCode}}</view>
-        <view class="page__desc counter">{{counter}}</view>
+        <view class="page__desc counter">{{counter}}s</view>
       </view>
     </view>
     <view class="page__bd">
@@ -17,7 +17,7 @@
     </view>
 
     <view class="page__bd page__bd_spacing" style="margin-top:32rpx;">
-      <button class="weui-btn" style="background-color:#606060" type="primary" bindtap="manageGameTap" loading="{{loading}}">开始游戏</button>
+      <button class="weui-btn" style="background-color:#606060" type="primary" bindtap="manageGameTap" loading="{{loading}}" disabled="{{loading}}">开始游戏</button>
       <button class="weui-btn" type="default" bindtap="cancleGameTap">取消游戏</button>
     </view>
 </view>

@@ -63,7 +63,7 @@ Page({
 
   onUnload: function () {
     clearInterval(timer);
-    clearInterval(timer);
+    clearInterval(clock);
   },
 
   getRoleList: function (){
@@ -83,15 +83,9 @@ Page({
 
         if(isAllHere){
           clearInterval(timer);
-          clearInterval(timer);
+          clearInterval(clock);
           self.setData({
             loading:false
-          })
-          wx.showModal({
-            title: "提示",
-            content: "全员到齐,准备开始游戏！",
-            confirmText: "确定",
-            showCancel: false,
           })
         }
         self.setData({

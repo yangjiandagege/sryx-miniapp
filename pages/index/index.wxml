@@ -1,3 +1,4 @@
+<import src="/style/acce-widget/foot.wxml" />
 <view class="body-wrap">
 
   <image src="/image/logo.png" class="logo"></image>
@@ -14,4 +15,8 @@
   <navigator class="item" url="/pages/myRecord/myRecord">
     我的记录
   </navigator>
+
+  <view style="position:absolute;bottom:8rpx;width:100%;">
+    <template is="foot" />
+  </view>
 </view>

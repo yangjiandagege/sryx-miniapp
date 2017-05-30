@@ -47,7 +47,6 @@ Page({
           gameOwnerId: getApp().user.openid,
           gameOwnerAvatarUrl: getApp().user.userInfo.avatarUrl,
           gameOwnerNickName: getApp().user.userInfo.nickName,
-          state: 0,
           killerNum: self.data.killerNum,
           policeNum: self.data.policeNum,
           citizenNum: self.data.citizenNum,

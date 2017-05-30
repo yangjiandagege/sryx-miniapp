@@ -6,7 +6,8 @@
     "pages/myRecord/myRecord",
     "pages/waitGame/waitGame",
     "pages/role/role",
-    "pages/manageGame/manageGame"
+    "pages/manageGame/manageGame",
+    "pages/gameRule/gameRule"
   ],
   "window": {
     "navigationBarTextStyle": "black",
