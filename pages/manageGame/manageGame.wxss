@@ -2,20 +2,82 @@
 .role-box{
   height: 120rpx;
   display: flex;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
   flex-direction: row;
   background-color: white;
-  border: solid #f0f0f0 1rpx;
+  border-bottom: solid #f0f0f0 1rpx;
 }
 
 .thumbnail{
   width: 80rpx;
   height: 80rpx;
   margin: auto 0;
-  margin-left: 32rpx;
   margin-right: 32rpx;
 }
 
-.name{
+.content{
+  width: 60%;
   margin: auto 0;
+  display: flex;
+  flex-direction: column;
+}
 
+.player-name-killer{
+  color: red;
+  font-size: 32rpx;
+}
+
+.role-type-killer{
+  color: red;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.player-name-police{
+  color: #412391;
+  font-size: 32rpx;
+}
+
+.role-type-police{
+  color: #412391;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.player-name-citizen{
+  color: #2aa515;
+  font-size: 32rpx;
+}
+
+.role-type-citizen{
+  color: #2aa515;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.kill-out{
+  width: 48rpx;
+  height: 48rpx;
+  margin: auto 20rpx;
+  align-self:flex-end;
+}
+
+.vote-out{
+  width: 48rpx;
+  height: 48rpx;
+  margin: auto 20rpx;
+  align-self:flex-end;
+}
+
+.death-mark{
+  margin: auto 0;
+  width: 150rpx;
+  padding: 10rpx 10rpx;
+  text-align: center;
+  border: solid lightgray 1rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  transform:rotate(-15deg); 
+  color: lightgray;
 }

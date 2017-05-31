@@ -1,33 +1,92 @@
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">Article</view>
-        <view class="page__desc">文章</view>
-    </view>
     <view class="page__bd">
         <view class="weui-article">
-            <view class="weui-article__h1">大标题</view>
+            <view class="weui-article__h1">《谁是杀手》游戏规则说明</view>
             <view class="weui-article__section">
-                <view class="weui-article__title">章标题</view>
+
                 <view class="weui-article__section">
-                    <view class="weui-article__h3">1.1 节标题</view>
+                    <view class="weui-article__h3">1. 参加人数及警匪配置</view>
                     <view class="weui-article__p">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
+                        参加人数限定在8~16人范围内，其中玩家数在8~10人为2警2匪，11~14人为3警3匪，15~16人为4警4匪配置。
                     </view>
-                    <!--<view class="weui-article__p">
-                        <image class="weui-article__img" src="/image/pic_article.png" mode="aspectFit" style="height: 180px" />
-                        <image class="weui-article__img" src="/image/pic_article.png" mode="aspectFit" style="height: 180px" />
-                    </view>-->
                 </view>
+
                 <view class="weui-article__section">
-                    <view class="weui-article__h3">1.2 节标题</view>
-                    <view class="weui-article__p">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <view class="weui-article__h3">2. 基本原则</view>
+                    <view class="weui-article__p" style="word-break:break-all">
+                      <view>
+                        1） 警察：找出杀手并带领平民公决出杀手;
+                      </view>
+                      <view>
+                        2） 杀手：找出警察并在天黑时杀掉;
+                      </view>
+                      <view>
+                        3） 平民：帮助警察公决出杀手，任何时候平民都不得故意帮助杀手。
+                      </view>
+                    </view>
+                </view>
+
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">3. 游戏流程（以12人游戏为例）</view>
+                    <view class="weui-article__p" style="word-break:break-all">
+                      <view>
+                        1） 裁判创建游戏（3个杀手、3个警察、6个平民），并将游戏邀请码分享给大家，然后其他人输入邀请码加入到游戏，所有人到齐之后即可开始游戏。裁判开始主持游戏，众人要听从裁判的口令。
+                      </view>
+                      <view>
+                        2） 裁判说：天黑了，请大家闭眼。等大家都闭眼并由裁判确认后，裁判说：杀手请睁眼。所有杀手睁眼，互相辨认自己的同伴，确认完同伴后由任意一位杀手或众杀手统一意见后杀掉某人，如果意见无法完全统一，则由裁判取其中多数人的意见。
+                      </view>
+                      <view>
+                        3） 裁判说：杀手请闭眼。杀手重新闭眼。（稍后）裁判说：警察请睁眼。所有睁开眼睛，相互确认自己的同伴。确认完同伴后警察们统一意见指出一个嫌疑人，并由裁判给出相应的手势来告知警察被指认人的准确身份。
+                      </view>
+                      <view>
+                        4） 裁判说：警察请闭眼。警察重新闭眼。（稍后）裁判说：天亮了，请大家睁眼。 待大家都睁眼后，裁判宣布这一轮谁被杀，同时，裁判指示被杀者留遗言。被杀者可以指认自己认为是杀手的人，并陈述理由。遗言毕，被杀者退出本局游戏，不得继续参与游戏进程。但如果其仍留在包房内，则在其他活人闭眼时亦必须闭眼以防止影响活人正常继续游戏。 
+                      </view>
+                      <view>
+                        5） 裁判主持由被杀者右手边第一人开始逐一陈述自己的观点，发言毕说“过”以表明发言结束。每个人每轮只有一次发言的机会，且除自己发言时间以外不得发表任何意见。 
+                      </view>
+                      <view>
+                        6） 发言完毕，由裁判主持投票。从本轮被杀者右手边第一个人开始进行投票，裁判叫到谁，想投票给他的人可以投票。每个人只有一次投票机会，也可弃权不投。投票完毕后，得票最多者视为被公决出局，留遗言后退出本局游戏，此时，本局游戏第一轮结束。 
+                      </view>
+                      <view>
+                        7） 按上述顺序进入第二轮游戏，同样由裁判宣布天黑闭眼，然后重复以上过程。 直到某一种身份者全部出局，本局游戏结束。此时依照游戏胜负判定方法由裁判判定本局结果。 
+                      </view>
+                    </view>
+                </view>
+
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">4. 游戏胜负判定方法</view>
+                    <view class="weui-article__p" style="word-break:break-all">
+                      <view>
+                        1） 杀手一方全部死去，则警察一方获胜。
+                      </view>
+                      <view>
+                        2） 警察一方全部死去，则杀手一方获胜。
+                      </view>
+                      <view>
+                        3） 平民全部死去为平局。
+                      </view>
+                      <view>
+                        4） 平民的胜负与警察相同。即，警察赢则平民为赢；警察输则平民为输。
+                      </view>
+                    </view>
+                </view>
+
+
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">5. 注意事项</view>
+                    <view class="weui-article__p" style="word-break:break-all">
+                      <view>
+                        1） 留遗言人数与警匪人数相同。即如果是3警3匪配置，则前面3个死人（包括被杀者和被公决者）可留遗言。其后死的人没有遗言。 
+                      </view>
+                      <view>
+                        2） 杀人或验人时要少数服从多数，裁判也将遵循这一准则确定结果。
+                      </view>
+                      <view>
+                        3） 不允许连续两局第一轮杀同一个人。
+                      </view>
+                      <view>
+                        4） 平民的胜负与警察相同。即，警察赢则平民为赢；警察输则平民为输。
+                      </view>
                     </view>
                 </view>
             </view>

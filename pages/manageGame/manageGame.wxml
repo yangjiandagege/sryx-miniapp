@@ -1,6 +1,21 @@
-<block  wx:for-items="{{roleList}}">
-  <view class="role-box">
-    <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
-    <view class="name">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
-  </view>
-</block>
+<view style="background-color:#fff;">
+  <block wx:for-items="{{roleList}}">
+    <view class="role-box">
+      <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
+      <view class="content">
+        <view class="player-name-{{item.roleFlag}}">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
+        <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
+      </view>
+      <view class="flx-row" wx:if="{{item.death==0}}">
+        <image class="vote-out" src="/image/vote-out.png"></image>
+        <image class="kill-out" src="/image/kill-out.png"></image>
+      </view>
+      <view class="death-mark" wx:elif="{{item.death==1}}">
+        死亡
+      </view>
+      <view class="death-mark" wx:elif="{{item.death==2}}">
+        投票出局
+      </view>
+    </view>
+  </block>
+</view>

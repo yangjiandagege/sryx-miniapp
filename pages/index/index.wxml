@@ -12,7 +12,7 @@
     加入游戏
   </navigator>
 
-  <navigator class="item" url="/pages/myRecord/myRecord">
+  <navigator class="item" url="/pages/manageGame/manageGame">
     我的记录
   </navigator>
 
