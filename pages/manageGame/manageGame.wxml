@@ -1,25 +1,28 @@
-<view style="background-color:#fff;">
-  <block wx:for-items="{{roleList}}"  wx:key="{{item.roleId}}">
-    <view class="role-box">
-      <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
-      <view class="content">
-        <view class="player-name-{{item.roleFlag}}">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
-        <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
+<view class="body">
+  <scroll-view scroll-y style="background-color:#fff;height:{{scrollHeight}}px">
+    <block wx:for-items="{{roleList}}"  wx:key="{{item.roleId}}">
+      <view class="role-box">
+        <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
+        <view class="content">
+          <view class="player-name-{{item.roleFlag}}">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
+          <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
+        </view>
+        <view class="flx-row" wx:if="{{item.death==0}}">
+          <image id="voteout-{{item.roleId}}" class="vote-out" src="/image/vote-out.png" bindtap="voteOut"></image>
+          <image id="killout-{{item.roleId}}" class="kill-out" src="/image/kill-out.png" bindtap="killOut"></image>
+        </view>
+        <view class="death-mark" wx:elif="{{item.death==1}}">
+          死亡
+        </view>
+        <view class="death-mark" wx:elif="{{item.death==2}}">
+          投票出局
+        </view>
       </view>
-      <view class="flx-row" wx:if="{{item.death==0}}">
-        <image id="voteout-{{item.roleId}}" class="vote-out" src="/image/vote-out.png" bindtap="voteOut"></image>
-        <image id="killout-{{item.roleId}}" class="kill-out" src="/image/kill-out.png" bindtap="killOut"></image>
-      </view>
-      <view class="death-mark" wx:elif="{{item.death==1}}">
-        死亡
-      </view>
-      <view class="death-mark" wx:elif="{{item.death==2}}">
-        投票出局
-      </view>
-    </view>
-  </block>
-</view>
+    </block>
+    
+  </scroll-view>
 
-<view style="position:absolute;bottom:8rpx;width:100%;">
-  <button class="weui-btn" type="default" bindtap="cancleGameTap">取消游戏</button>
+  <view style="position:absolute;bottom:0rpx;width:100%;">
+    <view class="cancle-game" bindtap="cancleGameTap">取消游戏</view>
+  </view>
 </view>

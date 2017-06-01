@@ -22,3 +22,6 @@ page {
   display: flex;
   flex-direction: column;
 }
+.body{
+  height: 100%;
+}
