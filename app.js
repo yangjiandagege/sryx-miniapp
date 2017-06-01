@@ -5,6 +5,7 @@ App({
 
   user:{
     userInfo:{},
+    player:null,
     openid:null,
     accessToken:null,
   },

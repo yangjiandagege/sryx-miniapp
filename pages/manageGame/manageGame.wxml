@@ -1,5 +1,5 @@
 <view style="background-color:#fff;">
-  <block wx:for-items="{{roleList}}">
+  <block wx:for-items="{{roleList}}"  wx:key="{{item.roleId}}">
     <view class="role-box">
       <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
       <view class="content">
@@ -7,8 +7,8 @@
         <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
       </view>
       <view class="flx-row" wx:if="{{item.death==0}}">
-        <image class="vote-out" src="/image/vote-out.png"></image>
-        <image class="kill-out" src="/image/kill-out.png"></image>
+        <image id="voteout-{{item.roleId}}" class="vote-out" src="/image/vote-out.png" bindtap="voteOut"></image>
+        <image id="killout-{{item.roleId}}" class="kill-out" src="/image/kill-out.png" bindtap="killOut"></image>
       </view>
       <view class="death-mark" wx:elif="{{item.death==1}}">
         死亡
@@ -18,4 +18,8 @@
       </view>
     </view>
   </block>
+</view>
+
+<view style="position:absolute;bottom:8rpx;width:100%;">
+  <button class="weui-btn" type="default" bindtap="cancleGameTap">取消游戏</button>
 </view>

@@ -49,15 +49,6 @@ Page({
           }
         }, 1000);
       },
-
-      fail: function ({errMsg}) {
-        wx.showModal({
-          title: "错误",
-          content: errMsg,
-          confirmText: "确定",
-          showCancel: false,
-        })
-      }
     });
   },
 
@@ -106,11 +97,48 @@ Page({
 
   manageGameTap: function () {
     wx.redirectTo({
-      url: '/pages/manageGame/manageGame?gameId=' + gameId,
+      url: '/pages/manageGame/manageGame?gameId=' + gameId + '&inviteCode=' + self.data.game.inviteCode,
     })
   },
 
-  cancleGame: function (){
+  cancleGameTap: function (){
+    wx.showModal({
+      title: "提示",
+      content: "您确定要取消本局游戏吗？",
+      confirmText: "是",
+      cancelText: "否",
+      success:function(){
+        wx.request({
+          url: config.baseUrl + "updategamestate",
+          data: {
+            state: 3, //房主（法官）主动取消游戏，解散
+            gameId: gameId,
+          },
+          success: function (result) {
+            if (result.data.returnCode == '200') {
+              wx.showModal({
+                title: "提示",
+                content: "本局游戏已解散！",
+                confirmText: "确定",
+                showCancel: false,
+                success: function () {
+                  wx.navigateBack({})
+                }
+              })
+            } else {
+              wx.showModal({
+                title: "错误",
+                content: errMsg,
+                confirmText: "确定",
+                showCancel: false,
+              })
+            }
+          },
 
+          fail: function ({errMsg}) {
+          }
+        })
+      }
+    })
   }
 })
