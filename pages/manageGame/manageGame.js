@@ -90,13 +90,13 @@ Page({
 
                   var content = '';
                   switch (result.data.result){
-                    case 0://警察及平民方获得胜利！
-                      content = '杀手全部出局，【警察、平民】获得胜利！';
-                    break;
-                    case 1://杀手方获得胜利！
+                    case 0:
                       content = '警察全部出局，【杀手】获得胜利！';
                     break;
-                    case 2://平局！
+                    case 1:
+                      content = '杀手全部出局，【警察、平民】获得胜利！';
+                    break;
+                    case 2:
                       content = '平民全部出局，平局！';
                     break;
                   }

@@ -30,7 +30,7 @@ Page({
 
   submitRole: function(){
     wx.showToast({
-      title: 'loading...',
+      title: '正在进入房间...',
       icon: 'loading'
     })
 
@@ -54,7 +54,7 @@ Page({
               wx.hideToast();
               if (res.data.returnCode=='200'){
                 wx.redirectTo({
-                  url: '/pages/role/role?gameId=' + result.data.result.gameId,
+                  url: '/pages/role/role?gameId=' + result.data.result.gameId + '&inviteCode=' + self.data.inputContent,
                 })
               }else{
                 wx.showModal({

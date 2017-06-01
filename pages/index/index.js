@@ -167,7 +167,7 @@ Page({
               showCancel: false,
               success: function () {
                 wx.redirectTo({
-                  url: '/pages/role/role?gameId=' + game.gameId,
+                  url: '/pages/role/role?gameId=' + game.gameId+'&inviteCode='+game.inviteCode,
                 })
               }
             })

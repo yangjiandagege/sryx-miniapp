@@ -7,6 +7,7 @@
     "pages/waitGame/waitGame",
     "pages/role/role",
     "pages/manageGame/manageGame",
+    "pages/gameDetail/gameDetail",
     "pages/gameRule/gameRule"
   ],
   "window": {

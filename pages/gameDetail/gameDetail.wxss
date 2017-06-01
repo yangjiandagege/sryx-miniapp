@@ -1,0 +1,134 @@
+
+.role-box{
+  height: 120rpx;
+  display: flex;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  flex-direction: row;
+  background-color: white;
+  border-bottom: solid #f0f0f0 1rpx;
+}
+
+.thumbnail{
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto 0;
+  margin-right: 32rpx;
+}
+
+.content{
+  width: 60%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name-killer{
+  color: red;
+  font-size: 32rpx;
+}
+
+.role-type-killer{
+  color: red;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.player-name-police{
+  color: #412391;
+  font-size: 32rpx;
+}
+
+.role-type-police{
+  color: #412391;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.player-name-citizen{
+  color: #2aa515;
+  font-size: 32rpx;
+}
+
+.role-type-citizen{
+  color: #2aa515;
+  font-size: 28rpx;
+  opacity:0.5;
+}
+
+.death-mark{
+  margin: auto 0;
+  width: 150rpx;
+  padding: 10rpx 10rpx;
+  text-align: center;
+  border: solid lightgray 1rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  transform:rotate(-15deg); 
+  color: lightgray;
+}
+
+.prop-box{
+  height: 50rpx;
+  padding: 20rpx 32rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: solid #f0f0f0 1rpx;
+  background-color: white;
+}
+
+.prop-name{
+  height: 50rpx;
+  width: 30%;
+  text-align: left;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+
+.prop-value{
+  height: 50rpx;
+  width: 70%;
+  text-align: right;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.role-title{
+  height: 90rpx;
+  width: 50%;
+  line-height: 90rpx;
+  margin-left: 32rpx;
+  font-size: 28rpx;
+  color: gray;
+}
+
+.victory{
+  height: 90rpx;
+  width: 50%;
+  text-align: right;
+  line-height: 90rpx;
+  margin-right: 32rpx;
+  font-size: 40rpx;
+  color: red;
+}
+
+.fail{
+  height: 90rpx;
+  width: 50%;
+  text-align: right;
+  line-height: 90rpx;
+  margin-right: 32rpx;
+  font-size: 40rpx;
+  color: gray;
+}
+
+.tie{
+  height: 90rpx;
+  width: 50%;
+  text-align: right;
+  line-height: 90rpx;
+  margin-right: 32rpx;
+  font-size: 40rpx;
+  color: green;
+}

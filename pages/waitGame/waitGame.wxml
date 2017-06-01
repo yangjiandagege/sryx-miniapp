@@ -1,7 +1,7 @@
 <view class="page" style="padding:32rpx;">
     <view class="page__hd" style="margin-bottom:32rpx;">
       <view class="flx-row">
-        <view class="page__desc inviteCode">游戏邀请码：{{game.inviteCode}}</view>
+        <view class="page__desc inviteCode">房间编号：{{game.inviteCode}}</view>
         <view class="page__desc counter">{{counter}}s</view>
       </view>
     </view>

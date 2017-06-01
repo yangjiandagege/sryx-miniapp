@@ -1,0 +1,61 @@
+<view class="prop-box">
+  <view class="prop-name">房间编号</view>
+  <view class="prop-value">{{game.inviteCode}}</view>
+</view>
+<view class="prop-box">
+  <view class="prop-name">玩家配置</view>
+  <view class="prop-value">{{game.policeNum}}警{{game.killerNum}}匪{{game.citizenNum}}平民</view>
+</view>
+<view class="prop-box">
+  <view class="prop-name">起止时间</view>
+  <view class="prop-value">{{startEndTime}}</view>
+</view>
+<view class="flx-row">
+  <view class="role-title">警察和平民</view>
+  
+  <view class="fail" wx:if="{{game.result==0}}">失败</view>
+  <view class="victory" wx:elif="{{game.result==1}}">胜利</view>
+  <view class="tie" wx:elif="{{game.result==2}}">平局</view>
+</view>
+<view style="background-color:white;">
+  <block wx:for-items="{{justiceRoleList}}"  wx:key="{{item.roleId}}">
+    <view class="role-box" style="{{item.playerId==myPlayerId?'background-color:#f4f8f3':''}}">
+      <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
+      <view class="content">
+        <view class="player-name-{{item.roleFlag}}">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
+        <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
+      </view>
+      <view class="death-mark" wx:if="{{item.death==1}}">
+        死亡
+      </view>
+      <view class="death-mark" wx:elif="{{item.death==2}}">
+        投票出局
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="flx-row">
+  <view class="role-title">杀手</view>
+
+  <view class="victory" wx:if="{{game.result==0}}">胜利</view>
+  <view class="fail" wx:elif="{{game.result==1}}">失败</view>
+  <view class="tie" wx:elif="{{game.result==2}}">平局</view>
+</view>
+<view style="background-color:white;">
+  <block wx:for-items="{{evilRoleList}}"  wx:key="{{item.roleId}}">
+    <view class="role-box" style="{{item.playerId==myPlayerId?'background-color:#edf7e9':''}}">
+      <image class="thumbnail" src="{{item.playerAvatarUrl==null?'/image/header_pic.png':item.playerAvatarUrl}}" />
+      <view class="content">
+        <view class="player-name-{{item.roleFlag}}">{{item.playerNickName==null?'未连接':item.playerNickName}}</view>
+        <view class="role-type-{{item.roleFlag}}">{{item.roleType}}</view>
+      </view>
+      <view class="death-mark" wx:if="{{item.death==1}}">
+        死亡
+      </view>
+      <view class="death-mark" wx:elif="{{item.death==2}}">
+        投票出局
+      </view>
+    </view>
+  </block>
+</view>

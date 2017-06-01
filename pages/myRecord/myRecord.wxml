@@ -1,1 +1,31 @@
 
+<view class="kind-list">
+  <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+    <view class="kind-list-item">
+      <view id="{{item.id}}" class="kind-list-item-hd kind-list-item-hd-show">
+        <view class="kind-list-text">{{item.date}}</view>
+      </view>
+      <view class="kind-list-item-bd kind-list-item-bd-show">
+        <view class="navigator-box navigator-box-show">
+          <block wx:for-items="{{item.records}}" wx:for-item="record" wx:key="*item">
+            <navigator url="/pages/gameDetail/gameDetail?gameId={{record.gameId}}&roleId={{record.roleId}}" class="navigator">
+              <view class="role-type-{{record.roleType}}" wx:if="{{record.roleType==0}}">杀手</view>
+              <view class="role-type-{{record.roleType}}" wx:elif="{{record.roleType==1}}">警察</view>
+              <view class="role-type-{{record.roleType}}" wx:elif="{{record.roleType==2}}">平民</view>
+              <view class="role-type-{{record.roleType}}" wx:elif="{{record.roleType==3}}">裁判</view>
+
+              <view class="remark">{{record.remark}}</view>
+
+              <view class="result-tie" wx:if="{{record.victorySide==2}}">平局</view>
+              <view class="result-victory" wx:elif="{{record.victorySide==record.roleType}}">胜利</view>
+              <view class="result-victory" wx:elif="{{record.victorySide==1&&record.roleType!=0}}">胜利</view>
+              <view class="result-fail" wx:else>失败</view>
+              <view class="item-time">{{record.createTime}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
